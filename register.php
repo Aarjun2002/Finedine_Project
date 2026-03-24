@@ -1,0 +1,18 @@
+<?php include ("view/template/head.php"); ?>
+<?php include ("view/template/header.php"); ?>
+
+
+            <div class="container-xxl py-3 bg-dark hero-header mb-3">
+                <div class="container text-center my-3 pt-5 pb-4">
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Registration</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Registration</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+      
+    <?php include ("view/pages/index/register.php"); ?>
+    <?php include ("view/template/footer.php"); ?>
