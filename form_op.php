@@ -2,26 +2,62 @@
 
 
 <style>
-.container {
-    width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background: #b94e4e;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(5, 211, 22, 0.88);
+body {
+    background: #0f172a;
+    font-family: Arial, sans-serif;
 }
+
+.container {
+    width: 420px;
+    margin: 80px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+    color: #ffa200;
+}
+
 input {
     width: 100%;
     padding: 10px;
-    margin: 8px 0;
-}
-button {
-    padding: 10px;
-    background: black;
-    color: white;
+    margin-top: 5px;
     border: none;
-    cursor: pointer;
+    border-radius: 8px;
+    background: #242424;
+    color: white;
 }
+
+input[readonly] {
+    background: #0d0f0c;
+}
+
+.btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #f59e0b, #ef4444);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.5;
+}   
 </style>
 
 <?php
@@ -38,6 +74,12 @@ if(isset($_POST['insert'])) {
 
     $insertquery= "INSERT INTO employees (name, age, phone, email) VALUES ('$name', '$age', '$phone', '$email')";
     if ($connection->query($insertquery) === TRUE) {
+
+
+
+
+
+    
         echo "New record created successfully";
     } else {
         echo "Error: " . $insertquery . "<br>" . $connection->error;
@@ -53,12 +95,16 @@ else if(isset($_POST["update"])) {
         }
     }
 else if(isset($_POST["delete"])) {
+
+     if (empty($id)) {
+        echo "Please enter ID to delete";
+    } else {
     $deletequery = "DELETE FROM employees WHERE id='$id'";
     if ($connection->query($deletequery) === TRUE) {
         echo "Record deleted successfully";
-    } else {
+    } else {    
         echo "Error deleting record: " . $connection->error;
-    }
+    }}
 }
 
 else if(isset($_POST["display"])) {
@@ -86,7 +132,7 @@ else if(isset($_POST["display"])) {
     <input type="text" value="'.$row["email"].'">
 
     <br>
-    <button onclick="history.back()">Go Back</button>
+    <button class="btn" onclick="history.back()">Go Back</button>
             </div>';
         }
     } else {

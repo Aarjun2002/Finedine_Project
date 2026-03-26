@@ -1,4 +1,6 @@
-
+<!DOCTYPE html>
+<html lang="en">
+    
 
 <?php
 
@@ -16,11 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-<?php 
-$bodyClass = "bg-dark";
-include ("view/template/head.php"); ?>
+<head>
+    <?php include("view/template/header.php"); ?>
 
-
+</head>
+<body>
 
 
 
@@ -101,3 +103,5 @@ include ("view/template/head.php"); ?>
 
 <?php include ("view/template/footer.php"); ?>
 
+</body>
+</html>

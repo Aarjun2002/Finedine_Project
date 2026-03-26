@@ -1,6 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<?php include ("view/template/head.php"); ?>
-<?php include ("view/template/header.php"); ?>
+<head>
+    <?php include("view/template/header.php"); ?>
+
+</head>
+<body>
 
 
             <div class="container-xxl py-5 bg-dark hero-header mb-5">
@@ -19,4 +24,7 @@
             <?php include ("view/pages/index/testimonial.php"); ?>
         
     <?php include ("view/template/footer.php"); ?>
+</body>
+</html>
+
 

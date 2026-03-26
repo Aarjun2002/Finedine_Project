@@ -1,11 +1,15 @@
-
+<!DOCTYPE html>
+<html lang="en">
+    
 <?php
 session_start();
 ?>
 
-<?php include ("view/template/head.php"); ?>
-<?php include ("view/template/header.php"); ?>
+<head>
+    <?php include("view/template/header.php"); ?>
 
+    </head>
+<body>
 <div class="container-xxl py-3 bg-dark hero-header mb-3">
                 <div class="container text-center my-3 pt-5 pb-2">
                    <h1 class="display-3 text-white mb-1 animated slideInDown">My Profile</h1>
@@ -98,3 +102,5 @@ Book Your Table
 
 </div>
     <?php include ("view/template/footer.php"); ?>
+</body>
+</html>

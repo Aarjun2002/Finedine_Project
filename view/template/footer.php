@@ -35,7 +35,7 @@
                         <p>Subscribe to our newsletter for the latest updates and offers.</p>
                         <div class="position-relative mx-auto" style="max-width: 400px;">
                             <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="email" id="newsletterEmail" placeholder="Your email" required>
-                             <small id="emailError" class="text-danger"></small>
+                             <small id="emailerror" class="text-danger"></small>
                              <small id="emailSuccess" class="text-success"></small>
                             <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2" onclick="return validateNewsletter();">SignUp</button>
                         </div>
@@ -80,10 +80,9 @@
     <script src="asset/lib/tempusdominus/js/moment.min.js"></script>
     <script src="asset/lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="asset/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 
     <!-- Template Javascript -->
     <script src="asset/js/main.js"></script> 
         <!-- Footer End -->
-
-        </body>
-</html>

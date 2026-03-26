@@ -119,10 +119,31 @@
 
 })(jQuery);
 
+function validateEmail() {
+
+    let email = document.getElementById("email").value.toLowerCase();
+    let error = document.getElementById("emailError");
+
+    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    error.innerHTML = "";
+    
+    if(email === ""){
+        error.innerHTML = "Please enter your email";
+        return false;
+    }
+
+    if(!email.match(pattern)){
+        error.innerHTML = "Please enter a valid email address";
+        return false;
+    }
+}
+
+
 function validateNewsletter() {
 
     let email = document.getElementById("newsletterEmail").value.toLowerCase();
-    let error = document.getElementById("emailError");
+    let error = document.getElementById("emailerror");
     let success = document.getElementById("emailSuccess");
 
     let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;

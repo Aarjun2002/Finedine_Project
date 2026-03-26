@@ -1,116 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Employee Form</title>
+    <?php include("view/template/header.php"); ?>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #ffffff, #0f172a);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      color: white;
-    }
 
-    .container {
-      background: #161616;
-      padding: 35px;
-      border-radius: 15px;
-      width: 350px;
-      box-shadow: 0 0 20px rgba(255, 251, 0, 0.49);
-    }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    label {
-      font-size: 14px;
-      margin-bottom: 5px;
-      display: block;
-      color: #cbd5f5;
-    }
-
-    input {
-      width: 100%;
-      padding: 8px;
-      margin-bottom: 12px;
-      border: none;
-      border-radius: 8px;
-      outline: none;
-      background: #828791ea;
-      color: white;
-    }
-
-    input:focus {
-      border: 1px solid #22c55e;
-    }
-
-    .btn-group {
-      justify-content: center;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 10px;
-    }
-
-    button {
-      padding: 10px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .insert { background: #22c55e; }
-    .update { background: #3b82f6; }
-    .delete { background: #ef4444; }
-    .display { background: #f59e0b; }
-
-    button:hover {
-      opacity: 0.5;
-    }
-  </style>
 </head>
-
 <body>
 
-  <div class="container">
-    <h2>Employee Form</h2>
 
-    <form action="form_op.php" method="post">
+<div class="container-xxl py-5 bg-dark hero-header mb-4">
+                <div class="container text-center my-2 pt-3 pb-2">
+                    <h1 class="display-2 text-white mb-2 animated slideInDown">Contact</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
 
-      <label for="id">ID</label>
-      <input type="number" id="id" name="id">
 
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name">
+<div class="container py-2">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
 
-      <label for="age">Age</label>
-      <input type="number" id="age" name="age">
+            <div class="custom-card">
 
-      <label for="phone">Phone</label>
-      <input type="text" id="phone" name="phone">
+                <h3 class="form-title">Employee Form</h3>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email">
+                <form action="form_op.php" method="post" >
 
-      <div class="btn-group">
-        <button type="submit" name="insert" class="insert">Insert</button>
-        <button type="submit" name="update" class="update">Update</button>
-        <button type="submit" name="delete" class="delete">Delete</button>
-        <button type="submit" name="display" class="display">Display</button>
-      </div>
+                    <div class="row g-3">
 
-    </form>
-  </div>
+                        <div class="col-md-6">
+                            <label>ID</label>
+                            <input type="number" name="id" class="form-control">
+                        </div>
 
-</body>
+                        <div class="col-md-6">
+                            <label>Name</label>
+                            <input type="text" name="name" class="form-control">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label>Age</label>
+                            <input type="number" name="age" class="form-control" min="10" max="30">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label>Phone Number</label>
+                            <input type="text" class="form-control" id="contact" name="phone" maxlength="10">
+                            <small id="contactError" class="text-danger"></small>
+                        </div>
+                        <div class="col-12">
+                            <label>Email</label>
+                            <input type="email" id="email" name="email" class="form-control">
+                            <small id="emailError"></small>
+                        </div>
+
+                    </div>
+
+                    <div class="btn-group-custom mt-4">
+                        <button type="submit" id="insert" name="insert" class="btn-custom insert" onclick="return validateEmail(), checkContact()">Insert</button>
+                        <button type="submit" id="update" name="update" class="btn-custom update" onclick="return validateEmail(), checkContact()">Update</button>
+                        <button type="submit" id="delete" name="delete" class="btn-custom delete">Delete</button>
+                        <button type="submit" id="display" name="display" class="btn-custom display">Display</button>
+                     </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    <?php include ("view/template/footer.php"); ?>
+    
+
+        </body>
 </html>

@@ -1,7 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <?php include("view/template/header.php"); ?>
 
-<?php include ("view/template/head.php"); ?>
-<?php include ("view/template/header.php"); ?>
-
+</head>
+<body>
 
         <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->
@@ -48,3 +52,7 @@
 
        
        <?php include ("view/template/footer.php"); ?>
+
+
+       </body>
+</html>
